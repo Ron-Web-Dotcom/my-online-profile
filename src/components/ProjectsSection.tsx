@@ -33,7 +33,7 @@ export function ProjectsSection() {
         const manualProjects: Project[] = [
           {
             id: "flashmind-ai",
-            name: "Flashmind AI",
+            name: "Flashmind Ai",
             description: "Advanced AI-powered productivity tool designed to enhance learning and mental focus through cutting-edge large language models.",
             html_url: "https://github.com/Ron-Web-Dotcom/flashmind-ai",
             stargazers_count: 0,
@@ -50,6 +50,16 @@ export function ProjectsSection() {
             forks_count: 0,
             language: "PowerShell",
             topics: ["Automation", "Windows Server", "IT"]
+          },
+          {
+            id: "mec-tms-v2",
+            name: "Mec Tms V2",
+            description: "A sophisticated Task Management System version 2, built with TypeScript to streamline workflows and improve organizational efficiency.",
+            html_url: "https://github.com/Ron-Web-Dotcom/mec-tms-v2",
+            stargazers_count: 0,
+            forks_count: 0,
+            language: "TypeScript",
+            topics: ["Management", "TypeScript", "V2"]
           }
         ];
         
