@@ -20,20 +20,17 @@ export function EducationCard() {
 
         <div className="space-y-1">
           <h3 className="text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
-            B. Tech CSE-AI
+            BSc. MIS
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Amrita Vishwa Vidyapeetham, Coimbatore
+            Portmore Community College, Kingston
           </p>
         </div>
 
         <div className="flex items-center justify-between pt-4 mt-4 border-t border-white/5">
           <p className="text-xs font-mono text-muted-foreground/40 tracking-widest">
-            2022 – 2027
+            Graduated 2019
           </p>
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-[10px] font-bold text-primary">GPA: 8.34</span>
-          </div>
         </div>
       </GlassCard>
     </motion.div>

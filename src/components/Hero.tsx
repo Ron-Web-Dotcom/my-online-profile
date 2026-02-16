@@ -3,7 +3,6 @@ import { FileText, Mail } from "lucide-react";
 import { useState } from "react";
 import { ResumeModal } from "./ResumeModal";
 import { GlassCard } from "./ui/glass-card";
-import { ProfileCard } from "./ProfileCard";
 import { motion } from "framer-motion";
 
 export function Hero() {
@@ -39,7 +38,7 @@ export function Hero() {
             </div>
             
             <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-              Full-Stack Developer & UI/UX Enthusiast specializing in creating high-performance web applications.
+              Software Engineer & System Admin specializing in creating high-performance applications and secure IT infrastructure.
             </p>
           </motion.div>
 
@@ -71,18 +70,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Profile Image */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 mx-auto md:mx-0"
-        >
-          <div className="relative w-full h-full">
-            <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full -z-10 animate-pulse" />
-            <ProfileCard />
-          </div>
-        </motion.div>
+        {/* Profile Image removed */}
       </div>
 
       <ResumeModal open={resumeOpen} onOpenChange={setResumeOpen} />

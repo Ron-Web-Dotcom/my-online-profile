@@ -19,12 +19,10 @@ import { motion } from "framer-motion";
 
 const tools = [
   { name: "Node.js", icon: Terminal },
-  { name: "Python", icon: FileCode },
   { name: "Git", icon: GitBranch },
   { name: "GitHub", icon: Github },
   { name: "VS Code", icon: Layout },
   { name: "React", icon: Code },
-  { name: "Tailwind CSS", icon: Wind },
   { name: "HTML5", icon: Globe },
   { name: "CSS", icon: Palette },
   { name: "Java", icon: Layers },

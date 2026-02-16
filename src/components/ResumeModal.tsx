@@ -39,7 +39,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold text-white tracking-tight">RON TAYLOR</h1>
-                <p className="text-primary font-medium text-lg">Full-Stack Developer & Technical Support Engineer</p>
+                <p className="text-primary font-medium text-lg">Software Engineer & System Admin</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                 <div className="flex items-center gap-2">
@@ -67,7 +67,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2">Professional Summary</h2>
               <p className="leading-relaxed">
-                Multi-skilled Technical Support Engineer & Full-Stack Developer with 10+ years of hands-on experience across IT infrastructure, cloud systems, technical support, and web/API development. Proven ability to troubleshoot and resolve complex issues, deploy and secure enterprise systems, and automate processes to enhance IT operations. Excels in Windows Server environments, RESTful API development, and scripting.
+                Multi-skilled Software Engineer & System Admin with 10+ years of hands-on experience across IT infrastructure, cloud systems, technical support, and web/API development. Proven ability to troubleshoot and resolve complex issues, deploy and secure enterprise systems, and automate processes to enhance IT operations. Excels in Windows Server environments, RESTful API development, and scripting.
               </p>
             </section>
 

@@ -2,8 +2,6 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { StatusCard } from "./components/StatusCard";
 import { EducationCard } from "./components/EducationCard";
-import { SpotifyCard } from "./components/SpotifyCard";
-import { QuoteCard } from "./components/QuoteCard";
 import { AboutMe } from "./components/AboutMe";
 import { GitHubContributions } from "./components/GitHubContributions";
 import { ToolsMarquee } from "./components/ToolsMarquee";
@@ -32,7 +30,7 @@ function App() {
       <Navbar />
 
       <main id="main-content" className="container mx-auto px-4 sm:px-6 pt-8 pb-12 space-y-6 max-w-6xl">
-        {/* Row 1: Hero + Sidebar (Status, Education, Spotify) */}
+        {/* Row 1: Hero + Sidebar (Status, Education) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="lg:col-span-8">
             <Hero />
@@ -40,12 +38,10 @@ function App() {
           <div className="lg:col-span-4 flex flex-col gap-6">
             <StatusCard />
             <EducationCard />
-            <SpotifyCard />
           </div>
         </div>
 
-        {/* Row 2: Quote - full width */}
-        <QuoteCard />
+
 
         {/* Row 3: About Me */}
         <div id="about">
