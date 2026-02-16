@@ -60,7 +60,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                       <div className="space-y-2">
                         <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Languages</h3>
                         <div className="flex flex-wrap gap-2">
-                          {["Java", "C#", "JavaScript", "TypeScript", "Ruby", "C", "C++", "PHP", "Bash", "PowerShell", "Node JS", "Pascal"].map(skill => (
+                          {["Java", "C#", "JavaScript", "TypeScript", "JSON", "Ruby", "C", "C++", "PHP", "Bash", "PowerShell", "Node JS", "Pascal"].map(skill => (
                             <Badge key={skill} variant="secondary" className="bg-white/5 border-white/10 text-neutral-300 font-normal px-2 py-0.5 text-[10px]">
                               {skill}
                             </Badge>
