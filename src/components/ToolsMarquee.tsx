@@ -28,8 +28,6 @@ const tools = [
   { name: "Java", icon: Layers },
   { name: "C++", icon: Cpu },
   { name: "MongoDB", icon: Database },
-  { name: "Azure", icon: Cloud },
-  { name: "Go", icon: Server },
 ];
 
 export function ToolsMarquee() {

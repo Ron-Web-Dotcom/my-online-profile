@@ -128,7 +128,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                       <div className="space-y-2">
                         <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Cloud & Infra</h3>
                         <div className="flex flex-wrap gap-2">
-                          {["Microsoft Azure", "M365", "VMware", "AWS", "Git", "CI/CD"].map(skill => (
+                          {["M365", "VMware", "AWS", "Git", "CI/CD"].map(skill => (
                             <Badge key={skill} variant="secondary" className="bg-white/5 border-white/10 text-neutral-300 font-normal px-2 py-0.5 text-[10px]">
                               {skill}
                             </Badge>
@@ -172,7 +172,6 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                         <ul className="list-disc list-inside space-y-2 text-sm leading-relaxed text-neutral-400">
                           <li>Provide Tier 2/3 technical support across IT systems, SaaS apps, and infrastructure, resolving over 95% of tickets within SLA.</li>
                           <li>Administer Windows Server, Microsoft 365, and endpoint devices, ensuring uptime, access control, and system health.</li>
-                          <li>Develop, maintain, and document RESTful APIs in Go, enhancing backend performance and enabling seamless integration.</li>
                           <li>Automate system tasks using Bash and scheduled scripts, cutting manual workload by 30%.</li>
                           <li>Lead and coordinate application deployments, patching, and software rollouts with zero downtime.</li>
                         </ul>
@@ -243,10 +242,6 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                         <div className="space-y-1">
                           <h3 className="font-bold text-white text-base">BSc. Management Information Systems</h3>
                           <p className="text-neutral-400 text-sm">Portmore Community College — 2017 – 2019</p>
-                        </div>
-                        <div className="space-y-1">
-                          <h3 className="font-bold text-white text-base">Associate Degree in MIS</h3>
-                          <p className="text-neutral-400 text-sm">Portmore Community College — 2015 – 2017</p>
                         </div>
                       </div>
                       <div className="space-y-2">

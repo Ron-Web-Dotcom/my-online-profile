@@ -50,7 +50,7 @@ export function GitHubContributions() {
           <Github className="h-6 w-6 text-primary" />
           <div className="flex flex-col">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              GitHub Ecosystem
+              Latest Projects
             </span>
             <h3 className="text-xl font-bold text-foreground">Real-time Stats</h3>
           </div>

@@ -30,17 +30,6 @@ export function EducationCard() {
               2017 – 2019
             </p>
           </div>
-          <div className="space-y-1 border-t border-white/5 pt-4">
-            <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
-              Associate Degree
-            </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              MIS - Portmore CC
-            </p>
-            <p className="text-xs font-mono text-muted-foreground/40 tracking-widest">
-              2015 – 2017
-            </p>
-          </div>
         </div>
       </GlassCard>
     </motion.div>

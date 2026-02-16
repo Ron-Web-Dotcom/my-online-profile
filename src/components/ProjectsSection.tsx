@@ -25,7 +25,10 @@ export function ProjectsSection() {
       try {
         const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
         const data = await response.json();
-        setProjects(Array.isArray(data) ? data : []);
+        const filteredData = Array.isArray(data) 
+          ? data.filter((repo: Project) => repo.name !== "my-online-profile")
+          : [];
+        setProjects(filteredData);
       } catch (error) {
         console.error("Error fetching GitHub projects:", error);
       } finally {
