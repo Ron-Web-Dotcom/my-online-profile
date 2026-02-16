@@ -15,5 +15,10 @@ export default defineConfig({
     strictPort: true,
     host: true,
     allowedHosts: true,
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
   }
 });
