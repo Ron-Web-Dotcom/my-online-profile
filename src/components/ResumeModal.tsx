@@ -49,7 +49,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                   <section className="space-y-3">
                     <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2">Professional Summary</h2>
                     <p className="leading-relaxed text-base">
-                      Multi-skilled System Admin & Software Engineer with 10+ years of hands-on experience across IT infrastructure, cloud systems, technical support, and web/API development. Proven ability to troubleshoot and resolve complex issues, deploy and secure enterprise systems, and automate processes to enhance IT operations. Excels in Windows Server environments, RESTful API development, and scripting. Currently pursuing CompTIA Security+ certification to deepen cybersecurity capabilities.
+                      Multi-skilled System Admin & Software Engineer with 10+ years of hands-on experience across IT infrastructure, cloud systems, technical support, and web/API development. Proven ability to troubleshoot and resolve complex issues, deploy and secure enterprise systems, and automate processes to enhance IT operations. Adept at building scalable software solutions, engineering high-performance APIs, and managing secure, reliable systems infrastructure. Currently pursuing CompTIA Security+ certification to deepen cybersecurity capabilities.
                     </p>
                   </section>
 

@@ -26,7 +26,7 @@ export function AboutMe() {
           I'm a <span className="text-foreground font-semibold">System Admin & Software Engineer</span> with 10+ years of hands-on experience across IT infrastructure, cloud systems, and web/API development.
         </p>
         <p>
-          I specialize in <span className="text-foreground font-semibold">Windows Server environments</span>, <span className="text-foreground font-semibold">RESTful API development</span>, and <span className="text-foreground font-semibold">system automation</span>. My expertise lies in troubleshooting complex issues, deploying secure enterprise systems, and enhancing IT operations through modern development practices.
+          I build <span className="text-foreground font-semibold">scalable software solutions</span>, engineer <span className="text-foreground font-semibold">high-performance APIs</span>, and manage <span className="text-foreground font-semibold">secure, reliable systems infrastructure</span>. My expertise lies in troubleshooting complex issues, deploying secure enterprise systems, and enhancing IT operations through modern development practices.
         </p>
       </motion.div>
     </GlassCard>
