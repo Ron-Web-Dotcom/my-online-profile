@@ -28,17 +28,6 @@ export function AboutMe() {
         <p>
           I specialize in <span className="text-foreground font-semibold">Windows Server environments</span>, <span className="text-foreground font-semibold">RESTful API development</span>, and <span className="text-foreground font-semibold">system automation</span>. My expertise lies in troubleshooting complex issues, deploying secure enterprise systems, and enhancing IT operations through modern development practices.
         </p>
-        <div className="pt-4 flex flex-wrap gap-4 justify-center md:justify-start">
-          <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-primary uppercase tracking-widest">
-            10+ Years Experience
-          </div>
-          <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-primary uppercase tracking-widest">
-            Full-Stack Dev
-          </div>
-          <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-primary uppercase tracking-widest">
-            Cloud Solutions
-          </div>
-        </div>
       </motion.div>
     </GlassCard>
   );

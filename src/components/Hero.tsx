@@ -23,7 +23,7 @@ export function Hero() {
             className="space-y-4"
           >
             <p className="text-lg text-primary font-medium tracking-wide flex items-center gap-2">
-              Hi <span className="w-8 h-[1px] bg-primary/30" />
+              Hi
             </p>
             
             <h1 className="text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tighter leading-[1.1] text-foreground">

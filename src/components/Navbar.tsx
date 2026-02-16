@@ -1,6 +1,7 @@
 import { Moon, Sun } from "lucide-react";
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -10,7 +11,15 @@ const navLinks = [
 ];
 
 export function Navbar() {
-  const [darkMode, setDarkMode] = useState(true);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-white/5">
@@ -48,11 +57,11 @@ export function Navbar() {
         <motion.button
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          onClick={() => setDarkMode(!darkMode)}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="p-2.5 rounded-full border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 shadow-sm"
           aria-label="Toggle theme"
         >
-          {darkMode ? (
+          {theme === "dark" ? (
             <Moon className="w-4 h-4 text-primary" />
           ) : (
             <Sun className="w-4 h-4 text-primary" />

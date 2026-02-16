@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface Project {
-  id: number;
+  id: string | number;
   name: string;
   description: string;
   html_url: string;
-  homepage: string;
+  homepage?: string;
   stargazers_count: number;
   forks_count: number;
-  language: string;
-  topics: string[];
+  language?: string;
+  topics?: string[];
 }
 
 export function ProjectsSection() {
@@ -28,7 +28,32 @@ export function ProjectsSection() {
         const filteredData = Array.isArray(data) 
           ? data.filter((repo: Project) => repo.name !== "my-online-profile")
           : [];
-        setProjects(filteredData);
+        
+        // Add manual projects
+        const manualProjects: Project[] = [
+          {
+            id: "flashmind-ai",
+            name: "Flashmind AI",
+            description: "Advanced AI-powered productivity tool designed to enhance learning and mental focus through cutting-edge large language models.",
+            html_url: "https://github.com/Ron-Web-Dotcom/flashmind-ai",
+            stargazers_count: 0,
+            forks_count: 0,
+            language: "TypeScript",
+            topics: ["AI", "React", "LLM"]
+          },
+          {
+            id: "system-automation",
+            name: "Enterprise Automation Suite",
+            description: "A comprehensive suite of automation tools for Windows Server environments, optimizing system management and monitoring tasks.",
+            html_url: "https://github.com/Ron-Web-Dotcom/enterprise-automation",
+            stargazers_count: 0,
+            forks_count: 0,
+            language: "PowerShell",
+            topics: ["Automation", "Windows Server", "IT"]
+          }
+        ];
+        
+        setProjects([...manualProjects, ...filteredData]);
       } catch (error) {
         console.error("Error fetching GitHub projects:", error);
       } finally {
@@ -47,9 +72,6 @@ export function ProjectsSection() {
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
           Latest <span className="text-primary text-glow">Projects</span>
         </h2>
-        <p className="text-muted-foreground text-sm uppercase tracking-[0.3em] font-medium">
-          Synced with GitHub
-        </p>
       </div>
 
       {loading ? (
@@ -113,19 +135,6 @@ export function ProjectsSection() {
                     </div>
                     Source
                   </a>
-                  {project.homepage && (
-                    <a
-                      href={project.homepage}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-all group/link"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover/link:bg-primary/10 transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                      </div>
-                      Demo
-                    </a>
-                  )}
                 </div>
                 
                 <div className="flex items-center gap-4 text-muted-foreground/40">
