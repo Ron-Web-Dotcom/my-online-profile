@@ -20,13 +20,13 @@ export function Clock() {
   });
 
   return (
-    <div className="flex flex-col" role="timer" aria-label={`Current time in Pembroke Pines, Florida: ${localTime}`}>
+    <div className="flex flex-col" role="timer" aria-label={`Current time: ${localTime}`}>
       <span className="text-3xl font-bold tracking-tight text-foreground tabular-nums group-hover:text-primary transition-colors duration-500" aria-live="polite" aria-atomic="true">
         {localTime.toLowerCase()}
       </span>
       <div className="flex items-center gap-2 mt-1">
         <span className="text-[10px] font-bold text-muted-foreground/40 uppercase tracking-[0.2em]">
-          EST (Pembroke Pines, FL)
+          EST
         </span>
       </div>
     </div>

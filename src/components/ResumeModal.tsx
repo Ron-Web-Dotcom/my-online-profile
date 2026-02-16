@@ -33,14 +33,6 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-primary" />
-                        <span>Pembroke Pines, FL 33026</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Phone className="h-4 w-4 text-primary" />
-                        <span>+1 954 939 4934</span>
-                      </div>
-                      <div className="flex items-center gap-2">
                         <Mail className="h-4 w-4 text-primary" />
                         <span>rontaylor_23@hotmail.com</span>
                       </div>
@@ -68,7 +60,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                       <div className="space-y-2">
                         <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Languages</h3>
                         <div className="flex flex-wrap gap-2">
-                          {["Java", "C#", "JavaScript", "C", "C++", "PHP", "Bash", "PowerShell", "Node JS", "Pascal"].map(skill => (
+                          {["Java", "C#", "JavaScript", "TypeScript", "Ruby", "C", "C++", "PHP", "Bash", "PowerShell", "Node JS", "Pascal"].map(skill => (
                             <Badge key={skill} variant="secondary" className="bg-white/5 border-white/10 text-neutral-300 font-normal px-2 py-0.5 text-[10px]">
                               {skill}
                             </Badge>
@@ -78,7 +70,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                       <div className="space-y-2">
                         <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Web & Mobile</h3>
                         <div className="flex flex-wrap gap-2">
-                          {["HTML5", "CSS3", "SCSS", "ASP.NET", "React Native", "REST API DESIGN"].map(skill => (
+                          {["HTML5", "CSS3", "SCSS", "ASP.NET", "React Native", "Flutter", "Photoshop"].map(skill => (
                             <Badge key={skill} variant="secondary" className="bg-white/5 border-white/10 text-neutral-300 font-normal px-2 py-0.5 text-[10px]">
                               {skill}
                             </Badge>
@@ -88,7 +80,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                       <div className="space-y-2">
                         <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Cloud & Infra</h3>
                         <div className="flex flex-wrap gap-2">
-                          {["M365", "VMware", "AWS", "Git", "CI/CD"].map(skill => (
+                          {["VMware", "AWS", "Git"].map(skill => (
                             <Badge key={skill} variant="secondary" className="bg-white/5 border-white/10 text-neutral-300 font-normal px-2 py-0.5 text-[10px]">
                               {skill}
                             </Badge>
@@ -108,7 +100,17 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                       <div className="space-y-2">
                         <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Project Tools</h3>
                         <div className="flex flex-wrap gap-2">
-                          {["JIRA", "Trello", "Postman", "BITBUCKET"].map(skill => (
+                          {["JIRA", "Trello", "Postman", "BITBUCKET", "Cursor", "VSCode", "Replit", "Claude"].map(skill => (
+                            <Badge key={skill} variant="secondary" className="bg-white/5 border-white/10 text-neutral-300 font-normal px-2 py-0.5 text-[10px]">
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">By Architecture/Protocol</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {["REST", "SOAP", "GraphQL"].map(skill => (
                             <Badge key={skill} variant="secondary" className="bg-white/5 border-white/10 text-neutral-300 font-normal px-2 py-0.5 text-[10px]">
                               {skill}
                             </Badge>
