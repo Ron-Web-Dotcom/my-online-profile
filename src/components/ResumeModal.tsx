@@ -6,10 +6,8 @@ import {
 } from "./ui/dialog";
 import { ScrollArea } from "./ui/scroll-area";
 import { Badge } from "./ui/badge";
-import { Download, Mail, MapPin, Phone, Linkedin, ExternalLink, Eye, FileText } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
-import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
 interface ResumeModalProps {
   open: boolean;
@@ -17,56 +15,18 @@ interface ResumeModalProps {
 }
 
 export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
-  const resumeUrl = "https://firebasestorage.googleapis.com/v0/b/blink-451505.firebasestorage.app/o/user-uploads%2F2SVLjxrQpcUBAYZEWytphs80CE03%2FRONTAYLOR__82578fc5.pdf?alt=media&token=83e54bc2-55f6-479c-8a6a-32a120d193f9";
-  const [activeTab, setActiveTab] = useState("structured");
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-5xl h-[90vh] p-0 overflow-hidden bg-neutral-950 border-white/10 flex flex-col">
         <DialogHeader className="p-4 md:p-6 border-b border-white/10 flex-row items-center justify-between space-y-0 shrink-0">
-          <div className="flex items-center gap-4">
-            <DialogTitle className="text-xl font-bold text-white">Curriculum Vitae</DialogTitle>
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="hidden md:block">
-              <TabsList className="bg-white/5 border border-white/10">
-                <TabsTrigger value="structured" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-[10px] uppercase tracking-wider font-bold h-7">
-                  <Eye className="w-3 h-3 mr-2" />
-                  Structured
-                </TabsTrigger>
-                <TabsTrigger value="document" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-[10px] uppercase tracking-wider font-bold h-7">
-                  <FileText className="w-3 h-3 mr-2" />
-                  PDF Viewer
-                </TabsTrigger>
-              </TabsList>
-            </Tabs>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="md:hidden rounded-full border-white/10 bg-white/5 hover:bg-white/10 text-[10px] font-bold uppercase tracking-wider h-8"
-              onClick={() => setActiveTab(activeTab === 'structured' ? 'document' : 'structured')}
-            >
-              {activeTab === 'structured' ? 'View PDF' : 'View Text'}
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="rounded-full border-white/10 bg-white/5 hover:bg-white/10 text-[10px] font-bold uppercase tracking-wider h-8"
-              onClick={() => window.open(resumeUrl, '_blank')}
-            >
-              <Download className="h-3.5 w-3.5 mr-2" />
-              Download
-            </Button>
-          </div>
+          <DialogTitle className="text-xl font-bold text-white">My Resume</DialogTitle>
         </DialogHeader>
 
         <div className="flex-1 overflow-hidden relative">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="h-full flex flex-col">
-            <TabsContent value="structured" className="flex-1 m-0 h-full">
-              <ScrollArea className="h-full">
-                <div className="p-6 md:p-12 text-neutral-300 space-y-10">
-                  {/* Header section */}
-                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <ScrollArea className="h-full">
+            <div className="p-6 md:p-12 text-neutral-300 space-y-10">
+              {/* Header section */}
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div className="space-y-2">
                       <h1 className="text-4xl font-bold text-white tracking-tight">RON TAYLOR</h1>
                       <p className="text-primary font-medium text-lg">Software Engineer & System Admin</p>
@@ -261,15 +221,6 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                   </section>
                 </div>
               </ScrollArea>
-            </TabsContent>
-            <TabsContent value="document" className="flex-1 m-0 h-full">
-              <iframe 
-                src={`${resumeUrl}#toolbar=0&navpanes=0&scrollbar=0`}
-                className="w-full h-full border-0 bg-white"
-                title="Ron Taylor Resume PDF"
-              />
-            </TabsContent>
-          </Tabs>
         </div>
       </DialogContent>
     </Dialog>
