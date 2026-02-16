@@ -137,3 +137,14 @@
     animation: none !important;
   }
 }
+
+/* Hide Blink Badge */
+#blink-badge, 
+.blink-badge, 
+[class*="blink-badge"],
+[id*="blink-badge"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
