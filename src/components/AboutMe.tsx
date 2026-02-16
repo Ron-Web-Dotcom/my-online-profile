@@ -23,7 +23,7 @@ export function AboutMe() {
         className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto"
       >
         <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">
-          I'm a <span className="text-foreground font-semibold">Technical Support Engineer & Full-Stack Developer</span> with 10+ years of hands-on experience across IT infrastructure, cloud systems, and web/API development.
+          I'm a <span className="text-foreground font-semibold">System Admin & Software Engineer</span> with 10+ years of hands-on experience across IT infrastructure, cloud systems, and web/API development.
         </p>
         <p>
           I specialize in <span className="text-foreground font-semibold">Windows Server environments</span>, <span className="text-foreground font-semibold">RESTful API development</span>, and <span className="text-foreground font-semibold">system automation</span>. My expertise lies in troubleshooting complex issues, deploying secure enterprise systems, and enhancing IT operations through modern development practices.

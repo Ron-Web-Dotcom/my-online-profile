@@ -57,7 +57,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                   <section className="space-y-3">
                     <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2">Professional Summary</h2>
                     <p className="leading-relaxed text-base">
-                      Multi-skilled Technical Support Engineer & Full-Stack Developer with 10+ years of hands-on experience across IT infrastructure, cloud systems, technical support, and web/API development. Proven ability to troubleshoot and resolve complex issues, deploy and secure enterprise systems, and automate processes to enhance IT operations. Excels in Windows Server environments, RESTful API development, and scripting. Currently pursuing CompTIA Security+ certification to deepen cybersecurity capabilities.
+                      Multi-skilled System Admin & Software Engineer with 10+ years of hands-on experience across IT infrastructure, cloud systems, technical support, and web/API development. Proven ability to troubleshoot and resolve complex issues, deploy and secure enterprise systems, and automate processes to enhance IT operations. Excels in Windows Server environments, RESTful API development, and scripting. Currently pursuing CompTIA Security+ certification to deepen cybersecurity capabilities.
                     </p>
                   </section>
 
@@ -125,7 +125,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                     <div className="space-y-8">
                       <div className="space-y-3">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                          <h3 className="text-lg font-bold text-white">Software Developer & System Administrator</h3>
+                          <h3 className="text-lg font-bold text-white">Software Engineer & System Admin</h3>
                           <span className="text-primary font-medium">May 2021 – Present</span>
                         </div>
                         <p className="text-neutral-400 font-medium">Uplyft Capital – Miami, Florida</p>
@@ -139,7 +139,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
 
                       <div className="space-y-3">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                          <h3 className="text-lg font-bold text-white">Software Developer</h3>
+                          <h3 className="text-lg font-bold text-white">Software Engineer</h3>
                           <span className="text-primary font-medium">Mar 2018 – Sep 2019</span>
                         </div>
                         <p className="text-neutral-400 font-medium">Portmore Community College – Kingston, Jamaica</p>
@@ -167,7 +167,7 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
 
                       <div className="space-y-3">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                          <h3 className="text-lg font-bold text-white">Full Stack Developer</h3>
+                          <h3 className="text-lg font-bold text-white">Software Engineer</h3>
                           <span className="text-primary font-medium">Jan 2016 – Jan 2017</span>
                         </div>
                         <p className="text-neutral-400 font-medium">Smart Kiddz Pre-School – Kingston, Jamaica</p>
