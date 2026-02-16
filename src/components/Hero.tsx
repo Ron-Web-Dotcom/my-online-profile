@@ -38,7 +38,7 @@ export function Hero() {
             </div>
             
             <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-              Software Engineer & System Admin specializing in creating high-performance applications and secure IT infrastructure.
+              Technical Support Engineer & Full-Stack Developer specializing in creating high-performance applications and secure IT infrastructure.
             </p>
           </motion.div>
 
