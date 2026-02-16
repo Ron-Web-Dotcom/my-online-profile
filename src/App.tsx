@@ -43,8 +43,7 @@ function App() {
             </div>
           </div>
 
-          {/* Row 2: GitHub Stats */}
-          <GitHubContributions />
+
 
           {/* Row 3: About Me */}
           <div id="about">
