@@ -2,6 +2,7 @@ import { GlassCard } from "./ui/glass-card";
 import { ExternalLink, Github, Monitor, Star, GitFork } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface Project {
   id: string | number;
@@ -29,41 +30,7 @@ export function ProjectsSection() {
           ? data.filter((repo: Project) => repo.name !== "my-online-profile")
           : [];
         
-        // Add manual projects
-        const manualProjects: Project[] = [
-          {
-            id: "flashmind-ai",
-            name: "Flashmind Ai",
-            description: "Advanced AI-powered productivity tool designed to enhance learning and mental focus through cutting-edge large language models.",
-            html_url: "https://github.com/Ron-Web-Dotcom/flashmind-ai",
-            stargazers_count: 0,
-            forks_count: 0,
-            language: "TypeScript",
-            topics: ["AI", "React", "LLM"]
-          },
-          {
-            id: "system-automation",
-            name: "Enterprise Automation Suite",
-            description: "A comprehensive suite of automation tools for Windows Server environments, optimizing system management and monitoring tasks.",
-            html_url: "https://github.com/Ron-Web-Dotcom/enterprise-automation",
-            stargazers_count: 0,
-            forks_count: 0,
-            language: "PowerShell",
-            topics: ["Automation", "Windows Server", "IT"]
-          },
-          {
-            id: "mec-tms-v2",
-            name: "Mec Tms V2",
-            description: "A sophisticated Task Management System version 2, built with TypeScript to streamline workflows and improve organizational efficiency.",
-            html_url: "https://github.com/Ron-Web-Dotcom/mec-tms-v2",
-            stargazers_count: 0,
-            forks_count: 0,
-            language: "TypeScript",
-            topics: ["Management", "TypeScript", "V2"]
-          }
-        ];
-        
-        setProjects([...manualProjects, ...filteredData]);
+        setProjects(filteredData.slice(0, 5));
       } catch (error) {
         console.error("Error fetching GitHub projects:", error);
       } finally {
@@ -85,13 +52,13 @@ export function ProjectsSection() {
       </div>
 
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="h-64 rounded-3xl bg-white/5 animate-pulse" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className={cn("h-64 rounded-3xl bg-white/5 animate-pulse", i <= 2 ? "lg:col-span-3" : "lg:col-span-2")} />
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -99,7 +66,10 @@ export function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-3xl border border-white/5 bg-white/[0.02] p-8 space-y-6 hover:border-primary/20 hover:bg-primary/[0.02] transition-all duration-500 group/project relative overflow-hidden"
+              className={cn(
+                "rounded-3xl border border-white/5 bg-white/[0.02] p-8 space-y-6 hover:border-primary/20 hover:bg-primary/[0.02] transition-all duration-500 group/project relative overflow-hidden",
+                index < 2 ? "lg:col-span-3" : "lg:col-span-2"
+              )}
             >
               <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 blur-3xl rounded-full group-hover/project:bg-primary/10 transition-colors" />
               
