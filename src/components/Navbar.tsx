@@ -1,7 +1,4 @@
-import { Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -11,16 +8,6 @@ const navLinks = [
 ];
 
 export function Navbar() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Avoid hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-white/5">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between max-w-6xl">
@@ -53,20 +40,9 @@ export function Navbar() {
             </a>
           ))}
         </motion.div>
-
-        <motion.button
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="p-2.5 rounded-full border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 shadow-sm"
-          aria-label="Toggle theme"
-        >
-          {theme === "dark" ? (
-            <Moon className="w-4 h-4 text-primary" />
-          ) : (
-            <Sun className="w-4 h-4 text-primary" />
-          )}
-        </motion.button>
+        
+        {/* Spacer for alignment if needed, or just leave as is since we use justify-between */}
+        <div className="w-[100px] hidden md:block" /> 
       </div>
     </nav>
   );
