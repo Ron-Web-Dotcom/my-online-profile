@@ -1,6 +1,7 @@
 import { GlassCard } from "./ui/glass-card";
 import { Github, ExternalLink } from "lucide-react";
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -44,11 +45,11 @@ function getMonthLabels() {
 }
 
 const levelColors = [
-  "bg-white/[0.03]",
+  "bg-white/[0.05]",
   "bg-primary/20",
   "bg-primary/40",
-  "bg-primary/60",
-  "bg-primary/90",
+  "bg-primary/70",
+  "bg-primary",
 ];
 
 export function GitHubContributions() {
@@ -71,61 +72,70 @@ export function GitHubContributions() {
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="text-xs text-muted-foreground">
-            Total: <span className="text-primary font-bold">{totalContributions}</span>
-          </span>
-          <span className="text-xs text-muted-foreground">
-            Current: <span className="text-primary font-bold">6 days</span>
-          </span>
-          <span className="text-xs text-muted-foreground">
-            Longest: <span className="text-primary font-bold">8 days</span>
-          </span>
-          <span className="text-[11px] text-muted-foreground/50 border border-white/10 rounded-full px-3 py-0.5">
-            Last 365 days
-          </span>
+        <div className="flex flex-wrap items-center gap-4">
+          <div className="flex gap-4">
+            <div className="flex flex-col">
+              <span className="text-[10px] uppercase tracking-wider text-muted-foreground/50">Total</span>
+              <span className="text-sm font-bold text-primary">{totalContributions}</span>
+            </div>
+            <div className="flex flex-col border-l border-white/5 pl-4">
+              <span className="text-[10px] uppercase tracking-wider text-muted-foreground/50">Current</span>
+              <span className="text-sm font-bold text-primary">0 days</span>
+            </div>
+            <div className="flex flex-col border-l border-white/5 pl-4">
+              <span className="text-[10px] uppercase tracking-wider text-muted-foreground/50">Longest</span>
+              <span className="text-sm font-bold text-primary">8 days</span>
+            </div>
+          </div>
+          
           <a
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-bold text-primary flex items-center gap-1 hover:underline"
+            className="group/link flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-primary/10 hover:border-primary/20 transition-all duration-300"
           >
-            @{username}
-            <ExternalLink className="w-3 h-3" />
+            <span className="text-xs font-bold text-muted-foreground group-hover/link:text-primary transition-colors">
+              @{username}
+            </span>
+            <ExternalLink className="w-3 h-3 text-muted-foreground group-hover/link:text-primary transition-colors" />
           </a>
         </div>
       </div>
 
       {/* Contribution Graph */}
-      <div className="overflow-x-auto -mx-2 px-2">
-        {/* Month labels */}
-        <div className="flex gap-[3px] min-w-[680px] mb-1 pl-0">
-          {Array.from({ length: 52 }).map((_, wi) => {
-            const monthLabel = monthLabels.find((m) => m.col === wi);
-            return (
-              <div key={wi} className="w-[11px] flex-shrink-0">
-                {monthLabel && (
-                  <span className="text-[9px] text-muted-foreground/50 leading-none">
-                    {monthLabel.label}
-                  </span>
-                )}
+      <div className="overflow-x-auto pb-2 scrollbar-hide">
+        <div className="min-w-[700px]">
+          {/* Month labels */}
+          <div className="flex gap-[4px] mb-2 pl-0">
+            {Array.from({ length: 52 }).map((_, wi) => {
+              const monthLabel = monthLabels.find((m) => m.col === wi);
+              return (
+                <div key={wi} className="w-[12px] flex-shrink-0">
+                  {monthLabel && (
+                    <span className="text-[10px] font-medium text-muted-foreground/50">
+                      {monthLabel.label}
+                    </span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          {/* Graph grid */}
+          <div className="flex gap-[4px]">
+            {contributionData.map((week, wi) => (
+              <div key={wi} className="flex flex-col gap-[4px]">
+                {week.map((level, di) => (
+                  <motion.div
+                    key={di}
+                    whileHover={{ scale: 1.3, zIndex: 10 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    className={`w-[12px] h-[12px] rounded-[3px] ${levelColors[level]} cursor-pointer`}
+                    title={`${level > 0 ? level * 15 : 0} contributions`}
+                  />
+                ))}
               </div>
-            );
-          })}
-        </div>
-        {/* Graph grid */}
-        <div className="flex gap-[3px] min-w-[680px]">
-          {contributionData.map((week, wi) => (
-            <div key={wi} className="flex flex-col gap-[3px]">
-              {week.map((level, di) => (
-                <div
-                  key={di}
-                  className={`w-[11px] h-[11px] rounded-[2px] ${levelColors[level]} transition-colors`}
-                  title={`${level > 0 ? level * 15 : 0} contributions`}
-                />
-              ))}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 import { GlassCard } from "./ui/glass-card";
 import { ExternalLink, Github, Monitor, CheckSquare, BarChart3, Bot } from "lucide-react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -50,58 +51,75 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <GlassCard id="projects" className="p-6 md:p-8 space-y-8">
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center">
-        Projects
-      </h2>
+    <GlassCard id="projects" className="p-8 md:p-12 space-y-10 relative overflow-hidden group">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl -z-10 group-hover:bg-primary/10 transition-colors" />
+      
+      <div className="space-y-2 text-center">
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+          Selected <span className="text-primary text-glow">Projects</span>
+        </h2>
+        <p className="text-muted-foreground text-sm uppercase tracking-[0.3em] font-medium">
+          Showcasing my work
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {projects.map((project) => (
-          <div
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.map((project, index) => (
+          <motion.div
             key={project.title}
-            className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 space-y-4 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300 group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="rounded-3xl border border-white/5 bg-white/[0.02] p-8 space-y-6 hover:border-primary/20 hover:bg-primary/[0.02] transition-all duration-500 group/project relative overflow-hidden"
           >
-            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${project.iconBg}`}>
-              <project.icon className={`w-5 h-5 ${project.iconColor}`} />
+            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 blur-3xl rounded-full group-hover/project:bg-primary/10 transition-colors" />
+            
+            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${project.iconBg} group-hover/project:scale-110 transition-transform duration-500 shadow-sm`}>
+              <project.icon className={`w-6 h-6 ${project.iconColor}`} />
             </div>
 
-            <div className="space-y-1.5">
-              <h3 className="text-lg font-bold text-foreground/90 group-hover:text-primary transition-colors">
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-foreground group-hover/project:text-primary transition-colors">
                 {project.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-base leading-relaxed">
                 {project.description}
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2.5">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className={`text-[11px] font-medium px-2.5 py-0.5 rounded-full border ${project.tagColor}`}
+                  className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-lg border ${project.tagColor}`}
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            <div className="flex items-center gap-4 pt-1">
+            <div className="flex items-center gap-6 pt-2">
               <a
                 href={project.liveUrl}
-                className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-all group/link"
               >
-                <ExternalLink className="w-3.5 h-3.5" />
+                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover/link:bg-primary/10 transition-colors">
+                  <ExternalLink className="w-4 h-4" />
+                </div>
                 Live Demo
               </a>
               <a
                 href={project.sourceUrl}
-                className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-all group/link"
               >
-                <Github className="w-3.5 h-3.5" />
+                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover/link:bg-primary/10 transition-colors">
+                  <Github className="w-4 h-4" />
+                </div>
                 Source
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </GlassCard>
