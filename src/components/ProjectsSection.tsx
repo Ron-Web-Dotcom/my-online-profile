@@ -6,9 +6,10 @@ const projects = [
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce solution with React and Node.js",
     icon: Monitor,
-    iconColor: "bg-emerald-500/20 text-emerald-400",
+    iconBg: "bg-emerald-500/15",
+    iconColor: "text-emerald-400",
     tags: ["React", "Node.js", "MongoDB"],
-    tagColor: "text-emerald-400 border-emerald-400/20",
+    tagColor: "text-emerald-400 border-emerald-500/25 bg-emerald-500/5",
     liveUrl: "#",
     sourceUrl: "#",
   },
@@ -16,9 +17,10 @@ const projects = [
     title: "Task Management App",
     description: "Intuitive task manager with real-time collaboration",
     icon: CheckSquare,
-    iconColor: "bg-blue-500/20 text-blue-400",
+    iconBg: "bg-blue-500/15",
+    iconColor: "text-blue-400",
     tags: ["Vue.js", "Firebase", "Tailwind"],
-    tagColor: "text-blue-400 border-blue-400/20",
+    tagColor: "text-blue-400 border-blue-500/25 bg-blue-500/5",
     liveUrl: "#",
     sourceUrl: "#",
   },
@@ -26,9 +28,10 @@ const projects = [
     title: "Analytics Dashboard",
     description: "Real-time data visualization and reporting tool",
     icon: BarChart3,
-    iconColor: "bg-orange-500/20 text-orange-400",
+    iconBg: "bg-orange-500/15",
+    iconColor: "text-orange-400",
     tags: ["React", "D3.js", "Express"],
-    tagColor: "text-orange-400 border-orange-400/20",
+    tagColor: "text-orange-400 border-orange-500/25 bg-orange-500/5",
     liveUrl: "#",
     sourceUrl: "#",
   },
@@ -36,9 +39,10 @@ const projects = [
     title: "AI Chatbot",
     description: "ML-powered conversational assistant",
     icon: Bot,
-    iconColor: "bg-purple-500/20 text-purple-400",
+    iconBg: "bg-purple-500/15",
+    iconColor: "text-purple-400",
     tags: ["Python", "TensorFlow", "FastAPI"],
-    tagColor: "text-purple-400 border-purple-400/20",
+    tagColor: "text-purple-400 border-purple-500/25 bg-purple-500/5",
     liveUrl: "#",
     sourceUrl: "#",
   },
@@ -46,20 +50,23 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="space-y-10 py-16" aria-label="Projects">
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-center">
+    <GlassCard id="projects" className="p-6 md:p-8 space-y-8">
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center">
         Projects
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {projects.map((project) => (
-          <GlassCard key={project.title} className="p-8 space-y-5 group">
-            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${project.iconColor}`}>
-              <project.icon className="w-7 h-7" />
+          <div
+            key={project.title}
+            className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 space-y-4 hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300 group"
+          >
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${project.iconBg}`}>
+              <project.icon className={`w-5 h-5 ${project.iconColor}`} />
             </div>
 
-            <div className="space-y-2">
-              <h3 className="text-xl font-bold text-foreground/90 group-hover:text-primary transition-colors">
+            <div className="space-y-1.5">
+              <h3 className="text-lg font-bold text-foreground/90 group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -71,14 +78,14 @@ export function ProjectsSection() {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className={`text-xs font-medium px-3 py-1 rounded-full border ${project.tagColor}`}
+                  className={`text-[11px] font-medium px-2.5 py-0.5 rounded-full border ${project.tagColor}`}
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex items-center gap-4 pt-1">
               <a
                 href={project.liveUrl}
                 className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -94,9 +101,9 @@ export function ProjectsSection() {
                 Source
               </a>
             </div>
-          </GlassCard>
+          </div>
         ))}
       </div>
-    </section>
+    </GlassCard>
   );
 }

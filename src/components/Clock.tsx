@@ -20,16 +20,13 @@ export function Clock() {
   });
 
   return (
-    <div className="flex flex-col space-y-1" role="timer" aria-label={`Current time in Kingston, Jamaica: ${localTime}`}>
-      <span className="text-3xl font-bold tracking-tight text-foreground/90 tabular-nums" aria-live="polite" aria-atomic="true">
+    <div className="flex flex-col" role="timer" aria-label={`Current time in Kingston, Jamaica: ${localTime}`}>
+      <span className="text-2xl font-bold tracking-tight text-foreground/90 tabular-nums" aria-live="polite" aria-atomic="true">
         {localTime.toLowerCase()}
       </span>
-      <div className="flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-        <span className="text-xs font-bold text-muted-foreground uppercase tracking-[0.2em]">
-          EST (Kingston, JA)
-        </span>
-      </div>
+      <span className="text-[10px] font-medium text-muted-foreground/50 uppercase tracking-widest mt-0.5">
+        EST (Kingston, JA)
+      </span>
     </div>
   );
 }

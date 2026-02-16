@@ -2,15 +2,12 @@ import { GlassCard } from "./ui/glass-card";
 
 export function AboutMe() {
   return (
-    <GlassCard className="space-y-6 h-full p-8 group">
-      <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground/90 flex items-center gap-3">
-          About Me
-          <div className="h-1 w-12 bg-primary rounded-full opacity-50 group-hover:w-20 transition-all duration-500" />
-        </h2>
-      </div>
-      
-      <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+    <GlassCard className="p-8 md:p-10 space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center">
+        About Me
+      </h2>
+
+      <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
         <p>
           I'm a <span className="text-foreground font-medium">Multi-skilled Technical Support Engineer & Full-Stack Developer</span> with 10+ years of hands-on experience across IT infrastructure, cloud systems, and web/API development.
         </p>

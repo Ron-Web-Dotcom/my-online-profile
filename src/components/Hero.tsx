@@ -9,20 +9,20 @@ export function Hero() {
   const [resumeOpen, setResumeOpen] = useState(false);
 
   return (
-    <GlassCard className="p-8 md:p-12">
-      <div className="flex flex-col md:flex-row md:items-center gap-8">
+    <GlassCard className="p-8 md:p-10 h-full">
+      <div className="flex flex-col md:flex-row md:items-center gap-8 h-full">
         {/* Text Content */}
-        <div className="flex-1 space-y-6">
-          <div className="space-y-4">
+        <div className="flex-1 space-y-5">
+          <div className="space-y-3">
             <p className="text-base text-muted-foreground font-medium" style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}>
               नमस्ते
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tighter leading-[1.1]">
               I'm <span className="text-primary">Ron Taylor</span>
             </h1>
-            <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
-              <p className="text-xs text-muted-foreground font-medium tracking-wide">
-                BUILDING DIGITAL EXPERIENCES THAT MATTER
+            <div className="inline-block px-3.5 py-1 rounded-full bg-white/5 border border-white/10">
+              <p className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase">
+                Building digital experiences that matter
               </p>
             </div>
             <p className="text-lg text-muted-foreground">
@@ -54,7 +54,7 @@ export function Hero() {
         </div>
 
         {/* Profile Image */}
-        <div className="w-48 h-48 md:w-56 md:h-56 flex-shrink-0 mx-auto md:mx-0">
+        <div className="w-44 h-44 md:w-52 md:h-52 flex-shrink-0 mx-auto md:mx-0">
           <ProfileCard />
         </div>
       </div>

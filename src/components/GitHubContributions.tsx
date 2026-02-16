@@ -2,11 +2,13 @@ import { GlassCard } from "./ui/glass-card";
 import { Github, ExternalLink } from "lucide-react";
 import { useMemo } from "react";
 
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 function generateContributionData() {
   const weeks = 52;
   const days = 7;
   const data: number[][] = [];
-  
+
   for (let w = 0; w < weeks; w++) {
     const week: number[] = [];
     for (let d = 0; d < days; d++) {
@@ -22,6 +24,25 @@ function generateContributionData() {
   return data;
 }
 
+function getMonthLabels() {
+  const labels: { label: string; col: number }[] = [];
+  const now = new Date();
+  const startDate = new Date(now);
+  startDate.setDate(startDate.getDate() - 364);
+
+  let lastMonth = -1;
+  for (let w = 0; w < 52; w++) {
+    const d = new Date(startDate);
+    d.setDate(d.getDate() + w * 7);
+    const month = d.getMonth();
+    if (month !== lastMonth) {
+      labels.push({ label: MONTHS[month], col: w });
+      lastMonth = month;
+    }
+  }
+  return labels;
+}
+
 const levelColors = [
   "bg-white/[0.03]",
   "bg-primary/20",
@@ -35,31 +56,34 @@ export function GitHubContributions() {
   const GITHUB_URL = `https://github.com/${username}`;
 
   const contributionData = useMemo(() => generateContributionData(), []);
+  const monthLabels = useMemo(() => getMonthLabels(), []);
   const totalContributions = useMemo(() => {
     return contributionData.flat().reduce((sum, val) => sum + (val > 0 ? val * 15 : 0), 0);
   }, [contributionData]);
 
   return (
-    <GlassCard className="p-8 space-y-6">
+    <GlassCard className="p-6 md:p-8 space-y-4">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <Github className="h-6 w-6 text-primary" />
+          <Github className="h-5 w-5 text-primary" />
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
             GitHub Contributions
           </span>
         </div>
-        
+
         <div className="flex flex-wrap items-center gap-3">
-          <span className="text-xs font-medium text-muted-foreground">
+          <span className="text-xs text-muted-foreground">
             Total: <span className="text-primary font-bold">{totalContributions}</span>
           </span>
-          <span className="text-xs font-medium text-muted-foreground">
+          <span className="text-xs text-muted-foreground">
             Current: <span className="text-primary font-bold">6 days</span>
           </span>
-          <span className="text-xs font-medium text-muted-foreground">
+          <span className="text-xs text-muted-foreground">
             Longest: <span className="text-primary font-bold">8 days</span>
           </span>
-          <span className="text-xs text-muted-foreground/60">Last 365 days</span>
+          <span className="text-[11px] text-muted-foreground/50 border border-white/10 rounded-full px-3 py-0.5">
+            Last 365 days
+          </span>
           <a
             href={GITHUB_URL}
             target="_blank"
@@ -73,8 +97,24 @@ export function GitHubContributions() {
       </div>
 
       {/* Contribution Graph */}
-      <div className="overflow-x-auto">
-        <div className="flex gap-[3px] min-w-[700px]">
+      <div className="overflow-x-auto -mx-2 px-2">
+        {/* Month labels */}
+        <div className="flex gap-[3px] min-w-[680px] mb-1 pl-0">
+          {Array.from({ length: 52 }).map((_, wi) => {
+            const monthLabel = monthLabels.find((m) => m.col === wi);
+            return (
+              <div key={wi} className="w-[11px] flex-shrink-0">
+                {monthLabel && (
+                  <span className="text-[9px] text-muted-foreground/50 leading-none">
+                    {monthLabel.label}
+                  </span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+        {/* Graph grid */}
+        <div className="flex gap-[3px] min-w-[680px]">
           {contributionData.map((week, wi) => (
             <div key={wi} className="flex flex-col gap-[3px]">
               {week.map((level, di) => (
@@ -91,11 +131,11 @@ export function GitHubContributions() {
 
       {/* Legend */}
       <div className="flex items-center justify-end gap-2">
-        <span className="text-xs text-muted-foreground/50">Less</span>
+        <span className="text-[10px] text-muted-foreground/40">Less</span>
         {levelColors.map((color, i) => (
           <div key={i} className={`w-[11px] h-[11px] rounded-[2px] ${color}`} />
         ))}
-        <span className="text-xs text-muted-foreground/50">More</span>
+        <span className="text-[10px] text-muted-foreground/40">More</span>
       </div>
     </GlassCard>
   );

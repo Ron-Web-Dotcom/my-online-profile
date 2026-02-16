@@ -31,23 +31,21 @@ function App() {
 
       <Navbar />
 
-      <main id="main-content" className="container mx-auto px-6 py-12 space-y-6">
-        {/* Row 1: Hero + Sidebar */}
+      <main id="main-content" className="container mx-auto px-4 sm:px-6 pt-8 pb-12 space-y-6 max-w-6xl">
+        {/* Row 1: Hero + Sidebar (Status, Education, Spotify) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="lg:col-span-8">
             <Hero />
           </div>
-          <div className="lg:col-span-4 grid grid-rows-2 gap-6">
+          <div className="lg:col-span-4 flex flex-col gap-6">
             <StatusCard />
             <EducationCard />
+            <SpotifyCard />
           </div>
         </div>
 
-        {/* Row 2: Spotify + Quote */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <SpotifyCard />
-          <QuoteCard />
-        </div>
+        {/* Row 2: Quote - full width */}
+        <QuoteCard />
 
         {/* Row 3: About Me */}
         <div id="about">
@@ -67,11 +65,11 @@ function App() {
         <ContactSection />
 
         {/* Footer */}
-        <footer className="py-12 border-t border-white/5 text-center space-y-4" role="contentinfo">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground/50">
+        <footer className="py-10 text-center space-y-3" role="contentinfo">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/40">
             Designed & Built by Ron Taylor
           </p>
-          <p className="text-xs text-muted-foreground/30">
+          <p className="text-[11px] text-muted-foreground/25">
             &copy; {new Date().getFullYear()} Ron Taylor. All rights reserved.
           </p>
         </footer>
