@@ -21,11 +21,11 @@ export function ContactSection() {
             <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
               <Mail className="w-6 h-6 md:w-8 md:h-8 text-primary" />
             </div>
-            <div className="flex flex-col min-w-0">
+            <div className="flex flex-col min-w-0 overflow-hidden">
               <span className="text-xs uppercase tracking-widest text-muted-foreground/50 font-bold mb-1">Email Me</span>
               <a 
                 href="mailto:rontaylor_23@hotmail.com" 
-                className="text-lg md:text-2xl font-bold text-foreground hover:text-primary transition-colors break-all"
+                className="text-lg md:text-2xl font-bold text-foreground hover:text-primary transition-colors break-words"
               >
                 rontaylor_23@hotmail.com
               </a>
