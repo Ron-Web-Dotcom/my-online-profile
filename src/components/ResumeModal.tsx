@@ -32,14 +32,14 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
                       <p className="text-primary font-medium text-lg">Software Engineer & System Admin</p>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                      <div className="flex items-center gap-2">
-                        <Mail className="h-4 w-4 text-primary" />
-                        <span>rontaylor_23@hotmail.com</span>
+                      <div className="flex items-center gap-2 min-w-0">
+                        <Mail className="h-4 w-4 text-primary shrink-0" />
+                        <span className="break-all">rontaylor_23@hotmail.com</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Linkedin className="h-4 w-4 text-primary" />
-                        <a href="https://linkedin.com/in/ron-taylor-982aa5105/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-1">
-                          LinkedIn <ExternalLink className="h-3 w-3" />
+                      <div className="flex items-center gap-2 min-w-0">
+                        <Linkedin className="h-4 w-4 text-primary shrink-0" />
+                        <a href="https://linkedin.com/in/ron-taylor-982aa5105/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-1 truncate">
+                          LinkedIn <ExternalLink className="h-3 w-3 shrink-0" />
                         </a>
                       </div>
                     </div>
